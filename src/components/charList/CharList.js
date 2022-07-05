@@ -4,7 +4,6 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 import MarvelService from "../../services/MarvelService";
 import "./charList.scss";
 
-
 class CharList extends Component {
   state = {
     charList: [],
