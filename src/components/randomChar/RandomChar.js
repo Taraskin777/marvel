@@ -33,7 +33,7 @@ class RandomChar extends Component {
   };
 
   onError = () => {
-    this.setState({ loading: false, error: true });
+    this.setState({ loading: false, error: false });
   };
 
   updateChar = () => {
