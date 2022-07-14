@@ -6,6 +6,7 @@ import MarvelService from "../../services/MarvelService";
 import "./charList.scss";
 
 const CharList = (props) => {
+  
   const [charList, setCharlist] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
