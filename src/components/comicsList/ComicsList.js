@@ -38,7 +38,7 @@ const ComicsList = (props) => {
     const items = arr.map((item, i) => {
       return (
         <li className="comics__item" key={i}>
-          <a href="#">
+          <a href="https://www.google.com.ua/">
             <img
               src={item.thumbnail}
               alt={item.title}
