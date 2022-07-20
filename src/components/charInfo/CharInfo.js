@@ -1,9 +1,11 @@
-import { Component, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import useMarvelService from "../../services/MarvelService";
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import Skeleton from "../skeleton/Skeleton";
+import { Link } from "react-router-dom";
+
 import "./charInfo.scss";
 
 const CharInfo = (props) => {
@@ -14,12 +16,6 @@ const CharInfo = (props) => {
   useEffect(() => {
     updateChar();
   }, [props.charId]);
-
-  const componentDidUpdate = (prevProps) => {
-    if (props.charId !== prevProps.charId) {
-      updateChar();
-    }
-  };
 
   const updateChar = () => {
     const { charId } = props;
@@ -82,11 +78,13 @@ const View = ({ char }) => {
       <ul className="char__comics-list">
         {comics.length > 0 ? null : "There is no comics with this character"}
         {comics.map((item, i) => {
+          const filteredComics = item.resourceURI.match(/\d/g).join('').slice(1);
+          console.log(filteredComics);
           // eslint-disable-next-line
           if (i > 9) return;
           return (
             <li key={i} className="char__comics-item">
-              {item.name}
+              <Link to={`/comics/${filteredComics}`}>{item.name}</Link>
             </li>
           );
         })}
