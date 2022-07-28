@@ -48,6 +48,9 @@
             opacity: 0;
             transition: opacity 500ms ease-in;
         }
+        &:hover {
+            transform: translateY(5px);
+        }
     }
     &__name {
         font-weight: bold;
@@ -56,4 +59,5 @@
         text-transform: uppercase;
         color: #fff;
     }
+    
 }
